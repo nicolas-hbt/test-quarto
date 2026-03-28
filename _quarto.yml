@@ -5,6 +5,15 @@ project:
 website:
   title: "Test"
   description: "Test"
+  # Adds a sleek top navigation bar
+  navbar:
+    background: primary
+    search: true
+    right:
+      - icon: github
+        href: https://github.com/nicolas-hbt/observable-ml
+        text: GitHub
+  # Keeps your left sidebar for chapter navigation
   sidebar:
     style: "docked"
     search: true
@@ -13,12 +22,17 @@ website:
         contents:
           - section: "Linear Algebra"
             contents:
-              - 1.1-vectors-and-spaces.qmd
-              # You will uncomment and add the others as we generate them!
+              - foundations/linear-algebra/01-atomic-fundamentals/1.1-vectors-and-spaces.qmd
               # - foundations/linear-algebra/01-atomic-fundamentals/1.2-matrix-types-and-properties.qmd
 
 format:
   html:
-    theme: cosmo # Clean, modern Bootstrap theme
+    # This enables the light/dark mode toggle switch!
+    theme:
+      light: flatly
+      dark: darkly
     css: styles.css
     toc: true
+    toc-depth: 3
+    toc-title: "On this page"
+    code-copy: true # Adds a 'copy' button to all your code blocks

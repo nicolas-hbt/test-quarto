@@ -9,7 +9,7 @@ To understand how models learn, we must understand the structure of the space in
 * **Span:** Imagine standing at the origin with a set of vectors. The "span" is the entire reachable universe of points you can travel to by stretching, shrinking, reversing, and adding these vectors together. 
 * **Linear Independence:** This is the mathematical measure of "information redundancy." If a vector in your dataset can be perfectly constructed by combining other vectors, it provides no new directional information; it is linearly dependent. In data science, this manifests as perfect multicollinearity, which destroys the stability of linear models.
 * **Basis:** A basis is the holy grail of a vector space. It is a strictly non-redundant (linearly independent) set of vectors that can reach anywhere in the space (spans the space). It acts as the absolute, minimal coordinate system for your data.
-* **Subspaces:** A subspace is a flat, lower-dimensional universe embedded within a higher-dimensional space (like a 2D plane slicing through 3D space). Crucially, it must pass through the origin. When we perform dimensionality reduction (like PCA), we are algorithmically searching for a lower-dimensional subspace that captures the maximum variance of our dataset.
+* **Subspaces:** A subspace is a flat, lower-dimensional universe embedded within a higher-dimensional space (like a 2D plane slicing through 3D space). Crucially, it must pass through the origin. When we perform dimensionality reduction (like PCA), we are algorithmically searching for a lower-dimensional subspace ///that captures the maximum variance of our dataset///.
 
 ## 2. Details
 
@@ -25,7 +25,7 @@ $$\text{Span}(S) = \left\{ \sum_{i=1}^k c_iv_i \mid c_i \in \mathbb{R} \right\}$
 A set of vectors is **linearly independent** if the only solution to the vector equation:
 $$c_1v_1 + c_2v_2 + \dots + c_kv_k = \mathbf{0}$$
 is the trivial solution: $c_1 = c_2 = \dots = c_k = 0$. 
-If any $c_i \neq 0$ exists that satisfies the equation, the vectors are **linearly dependent**, meaning at least one vector can be expressed as a linear combination of the others.
+If any $c_i \neq 0$ exists that satisfies the equation, the vectors are **linearly dependent**, meaning ///at least one vector can be expressed as a linear combination of the others///.
 
 **Basis and Dimension**
 A set of vectors $B = \{b_1, b_2, \dots, b_d\}$ forms a **basis** for a vector space $V$ if:
