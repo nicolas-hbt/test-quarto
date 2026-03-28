@@ -1,1 +1,0 @@
-Sitemap: https://nicolas-hbt.github.io/test-quarto/sitemap.xml

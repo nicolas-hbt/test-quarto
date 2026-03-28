@@ -22,8 +22,10 @@ website:
         contents:
           - section: "Linear Algebra"
             contents:
-              - foundations/linear-algebra/01-atomic-fundamentals/1.1-vectors-and-spaces.qmd
-              # - foundations/linear-algebra/01-atomic-fundamentals/1.2-matrix-types-and-properties.qmd
+              - section: "Atomic Fundamentals"
+                contents:
+                  - file: "foundations/linear-algebra/01-atomic-fundamentals/1.1-vectors-and-spaces.qmd"
+                  - file: "foundations/linear-algebra/01-atomic-fundamentals/1.2-matrix-types-and-properties.qmd"
 
 format:
   html:
