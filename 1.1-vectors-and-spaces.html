@@ -74,16 +74,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-418aba655b0866d48e838c369813d305.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cac18629bb11b13abc56c9564b31915e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-8547434e89f5f60b876ea395ecbcf21f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-cac18629bb11b13abc56c9564b31915e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -148,16 +152,203 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Test</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/nicolas-hbt/observable-ml"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Foundations</li><li class="breadcrumb-item"><a href="./1.1-vectors-and-spaces.html">Linear Algebra</a></li><li class="breadcrumb-item"><a href="./1.1-vectors-and-spaces.html">Vectors and Spaces</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Vectors and Spaces</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -167,14 +358,9 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Test</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -193,19 +379,16 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Linear Algebra</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./1.1-vectors-and-spaces.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Vectors and Spaces</span></a>
-  </div>
-</li>
+ <span class="menu-text">foundations/linear-algebra/01-atomic-fundamentals/1.1-vectors-and-spaces.qmd</span>
+  </li>
       </ul>
   </li>
       </ul>
@@ -236,7 +419,8 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Foundations</li><li class="breadcrumb-item"><a href="./1.1-vectors-and-spaces.html">Linear Algebra</a></li><li class="breadcrumb-item"><a href="./1.1-vectors-and-spaces.html">Vectors and Spaces</a></li></ol></nav>
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Vectors and Spaces</h1>
 </div>
@@ -263,14 +447,14 @@ window.Quarto = {
 <li><strong>Span:</strong> Imagine standing at the origin with a set of vectors. The “span” is the entire reachable universe of points you can travel to by stretching, shrinking, reversing, and adding these vectors together.</li>
 <li><strong>Linear Independence:</strong> This is the mathematical measure of “information redundancy.” If a vector in your dataset can be perfectly constructed by combining other vectors, it provides no new directional information; it is linearly dependent. In data science, this manifests as perfect multicollinearity, which destroys the stability of linear models.</li>
 <li><strong>Basis:</strong> A basis is the holy grail of a vector space. It is a strictly non-redundant (linearly independent) set of vectors that can reach anywhere in the space (spans the space). It acts as the absolute, minimal coordinate system for your data.</li>
-<li><strong>Subspaces:</strong> A subspace is a flat, lower-dimensional universe embedded within a higher-dimensional space (like a 2D plane slicing through 3D space). Crucially, it must pass through the origin. When we perform dimensionality reduction (like PCA), we are algorithmically searching for a lower-dimensional subspace that captures the maximum variance of our dataset.</li>
+<li><strong>Subspaces:</strong> A subspace is a flat, lower-dimensional universe embedded within a higher-dimensional space (like a 2D plane slicing through 3D space). Crucially, it must pass through the origin. When we perform dimensionality reduction (like PCA), we are algorithmically searching for a lower-dimensional subspace ///that captures the maximum variance of our dataset///.</li>
 </ul>
 </section>
 <section id="details" class="level2">
 <h2 class="anchored" data-anchor-id="details">2. Details</h2>
 <p>To operate effectively in <span class="math inline">\(n\)</span>-dimensional space, <span class="math inline">\(\mathbb{R}^n\)</span>, we formalize these concepts mathematically.</p>
 <p><strong>Linear Combinations and Span</strong> Given a set of vectors <span class="math inline">\(S = \{v_1, v_2, \dots, v_k\}\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span>, a linear combination is defined as: <span class="math display">\[v = c_1v_1 + c_2v_2 + \dots + c_kv_k\]</span> where <span class="math inline">\(c_i \in \mathbb{R}\)</span> are scalar weights. The <strong>Span</strong> of <span class="math inline">\(S\)</span> is the set of all possible linear combinations: <span class="math display">\[\text{Span}(S) = \left\{ \sum_{i=1}^k c_iv_i \mid c_i \in \mathbb{R} \right\}\]</span></p>
-<p><strong>Linear Independence</strong> A set of vectors is <strong>linearly independent</strong> if the only solution to the vector equation: <span class="math display">\[c_1v_1 + c_2v_2 + \dots + c_kv_k = \mathbf{0}\]</span> is the trivial solution: <span class="math inline">\(c_1 = c_2 = \dots = c_k = 0\)</span>. If any <span class="math inline">\(c_i \neq 0\)</span> exists that satisfies the equation, the vectors are <strong>linearly dependent</strong>, meaning at least one vector can be expressed as a linear combination of the others.</p>
+<p><strong>Linear Independence</strong> A set of vectors is <strong>linearly independent</strong> if the only solution to the vector equation: <span class="math display">\[c_1v_1 + c_2v_2 + \dots + c_kv_k = \mathbf{0}\]</span> is the trivial solution: <span class="math inline">\(c_1 = c_2 = \dots = c_k = 0\)</span>. If any <span class="math inline">\(c_i \neq 0\)</span> exists that satisfies the equation, the vectors are <strong>linearly dependent</strong>, meaning ///at least one vector can be expressed as a linear combination of the others///.</p>
 <p><strong>Basis and Dimension</strong> A set of vectors <span class="math inline">\(B = \{b_1, b_2, \dots, b_d\}\)</span> forms a <strong>basis</strong> for a vector space <span class="math inline">\(V\)</span> if: 1. <span class="math inline">\(B\)</span> is linearly independent. 2. <span class="math inline">\(\text{Span}(B) = V\)</span>.</p>
 <p>The number of vectors in the basis, <span class="math inline">\(d\)</span>, is the <strong>dimension</strong> of the space. Any vector <span class="math inline">\(x \in V\)</span> can be represented <em>uniquely</em> as a linear combination of the basis vectors.</p>
 <p><strong>Subspaces</strong> A subset <span class="math inline">\(W\)</span> of a vector space <span class="math inline">\(V\)</span> is a <strong>subspace</strong> if it satisfies three strict axioms: 1. <strong>Contains the zero vector:</strong> <span class="math inline">\(\mathbf{0} \in W\)</span>. 2. <strong>Closure under addition:</strong> If <span class="math inline">\(u, v \in W\)</span>, then <span class="math inline">\(u + v \in W\)</span>. 3. <strong>Closure under scalar multiplication:</strong> If <span class="math inline">\(u \in W\)</span> and <span class="math inline">\(c \in \mathbb{R}\)</span>, then <span class="math inline">\(cu \in W\)</span>.</p>
@@ -328,7 +512,7 @@ window.Quarto = {
 <section id="interactive-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="interactive-visualization">4. Interactive Visualization</h2>
 <p>This interactive Plotly visualization demonstrates a 2D subspace (a plane) embedded within <span class="math inline">\(\mathbb{R}^3\)</span>, spanned by two linearly independent vectors.</p>
-<div id="a36f6189" class="cell" data-execution_count="1">
+<div id="ff78c31d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -388,9 +572,9 @@ window.Quarto = {
 <span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>fig</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.4.0.min.js" integrity="sha256-KEmPoupLpFyGMyGAiOsiNDbKDKAvxXAn/W+oQa0ZAfk=" crossorigin="anonymous"></script>                <div id="a1b95ff1-4b0a-45d8-ae41-6da9e4444d77" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("a1b95ff1-4b0a-45d8-ae41-6da9e4444d77")) {                    Plotly.newPlot(                        "a1b95ff1-4b0a-45d8-ae41-6da9e4444d77",                        [{"colorscale":[[0.0,"rgb(247,251,255)"],[0.125,"rgb(222,235,247)"],[0.25,"rgb(198,219,239)"],[0.375,"rgb(158,202,225)"],[0.5,"rgb(107,174,214)"],[0.625,"rgb(66,146,198)"],[0.75,"rgb(33,113,181)"],[0.875,"rgb(8,81,156)"],[1.0,"rgb(8,48,107)"]],"name":"Subspace (Span)","opacity":0.4,"showscale":false,"x":{"dtype":"f8","bdata":"AAAAAAAAAAAcx3Ecx3HcPxzHcRzHcew\u002fVVVVVVVV9T8cx3Ecx3H8P3Icx3EcxwFAVVVVVVVVBUA4juM4juMIQBzHcRzHcQxAAAAAAAAAEEAcx3Ecx3HcvwAAAAAAAAAAHMdxHMdx3D8cx3Ecx3HsP1VVVVVVVfU\u002fHcdxHMdx\u002fD9yHMdxHMcBQFRVVVVVVQVAOI7jOI7jCEAcx3Ecx3EMQBzHcRzHcey\u002fHMdxHMdx3L8AAAAAAAAAABzHcRzHcdw\u002fHMdxHMdx7D9WVVVVVVX1PxzHcRzHcfw\u002fcRzHcRzHAUBVVVVVVVUFQDmO4ziO4whAVVVVVVVV9b8cx3Ecx3HsvxzHcRzHcdy\u002fAAAAAAAAAAAcx3Ecx3HcPx7HcRzHcew\u002fVVVVVVVV9T8bx3Ecx3H8P3Icx3EcxwFAVlVVVVVVBUAcx3Ecx3H8v1VVVVVVVfW\u002fHMdxHMdx7L8cx3Ecx3HcvwAAAAAAAAAAIMdxHMdx3D8cx3Ecx3HsP1RVVVVVVfU\u002fHMdxHMdx\u002fD9yHMdxHMcBQHIcx3EcxwHAHcdxHMdx\u002fL9WVVVVVVX1vx7HcRzHcey\u002fIMdxHMdx3L8AAAAAAAAAABjHcRzHcdw\u002fGMdxHMdx7D9UVVVVVVX1PxzHcRzHcfw\u002fVVVVVVVVBcByHMdxHMcBwBzHcRzHcfy\u002fVVVVVVVV9b8cx3Ecx3HsvxjHcRzHcdy\u002fAAAAAAAAAAAYx3Ecx3HcPxzHcRzHcew\u002fVlVVVVVV9T84juM4juMIwFRVVVVVVQXAcRzHcRzHAcAbx3Ecx3H8v1RVVVVVVfW\u002fGMdxHMdx7L8Yx3Ecx3HcvwAAAAAAAAAAIMdxHMdx3D8gx3Ecx3HsPxzHcRzHcQzAOI7jOI7jCMBVVVVVVVUFwHIcx3EcxwHAHMdxHMdx\u002fL9UVVVVVVX1vxzHcRzHcey\u002fIMdxHMdx3L8AAAAAAAAAACDHcRzHcdw\u002fAAAAAAAAEMAcx3Ecx3EMwDmO4ziO4wjAVlVVVVVVBcByHMdxHMcBwBzHcRzHcfy\u002fVlVVVVVV9b8gx3Ecx3HsvyDHcRzHcdy\u002fAAAAAAAAAAA=","shape":"10, 10"},"y":{"dtype":"f8","bdata":"AAAAAAAAGMAcx3Ecx3EUwDmO4ziO4xDAq6qqqqqqCsDkOI7jOI4DwDiO4ziO4\u002fi\u002fWFVVVVVV5b8Ax3Ecx3HMP3Acx3Ecx\u002fE\u002fAAAAAAAAAECO4ziO4zgWwKuqqqqqqhLAjuM4juM4DsDIcRzHcRwHwAAAAAAAAADAcRzHcRzH8b8ox3Ecx3HMv05VVVVVVeU\u002fN47jOI7j+D\u002fkOI7jOI4DQBzHcRzHcRTAOY7jOI7jEMCrqqqqqqoKwOQ4juM4jgPAOo7jOI7j+L9UVVVVVVXlvxDHcRzHccw\u002fbhzHcRzH8T\u002f+\u002f\u002f\u002f\u002f\u002f\u002f\u002f\u002fP8dxHMdxHAdAq6qqqqqqEsCO4ziO4zgOwMhxHMdxHAfAAAAAAAAAAMBzHMdxHMfxvxjHcRzHccy\u002fUlVVVVVV5T81juM4juP4P+I4juM4jgNAqqqqqqqqCkA5juM4juMQwKuqqqqqqgrA5DiO4ziOA8A6juM4juP4v1hVVVVVVeW\u002fIMdxHMdxzD9wHMdxHMfxP\u002fz\u002f\u002f\u002f\u002f\u002f\u002f\u002f8\u002fxnEcx3EcB0CO4ziO4zgOQI7jOI7jOA7Ax3Ecx3EcB8AAAAAAAAAAwHIcx3Ecx\u002fG\u002fIMdxHMdxzL9YVVVVVVXlPziO4ziO4\u002fg\u002f4jiO4ziOA0CqqqqqqqoKQDmO4ziO4xBAq6qqqqqqCsDkOI7jOI4DwDqO4ziO4\u002fi\u002fWFVVVVVV5b8Qx3Ecx3HMP3Icx3Ecx\u002fE\u002f\u002fv\u002f\u002f\u002f\u002f\u002f\u002f\u002fz\u002fFcRzHcRwHQI3jOI7jOA5AqqqqqqqqEkDIcRzHcRwHwAEAAAAAAADAdBzHcRzH8b8wx3Ecx3HMv1BVVVVVVeU\u002fOI7jOI7j+D\u002fiOI7jOI4DQKiqqqqqqgpAOI7jOI7jEEAcx3Ecx3EUQOQ4juM4jgPAOo7jOI7j+L9YVVVVVVXlvxDHcRzHccw\u002fcBzHcRzH8T8AAAAAAAAAQMZxHMdxHAdAjOM4juM4DkCqqqqqqqoSQI7jOI7jOBZAAAAAAAAAAMByHMdxHMfxvyDHcRzHccy\u002fVFVVVVVV5T84juM4juP4P+Q4juM4jgNAqqqqqqqqCkA4juM4juMQQBzHcRzHcRRAAAAAAAAAGEA=","shape":"10, 10"},"z":{"dtype":"f8","bdata":"AAAAAAAAAMAAAAAAAAAAwAAAAAAAAADAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAADAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAADAAAAAAAAAAMA5juM4juP4vzmO4ziO4\u002fi\u002fOY7jOI7j+L85juM4juP4vzmO4ziO4\u002fi\u002fOY7jOI7j+L85juM4juP4vzmO4ziO4\u002fi\u002fOY7jOI7j+L85juM4juP4v3Icx3Ecx\u002fG\u002fchzHcRzH8b9yHMdxHMfxv3Icx3Ecx\u002fG\u002fchzHcRzH8b9yHMdxHMfxv3Icx3Ecx\u002fG\u002fchzHcRzH8b9yHMdxHMfxv3Icx3Ecx\u002fG\u002fVlVVVVVV5b9WVVVVVVXlv1ZVVVVVVeW\u002fVlVVVVVV5b9WVVVVVVXlv1ZVVVVVVeW\u002fVlVVVVVV5b9WVVVVVVXlv1ZVVVVVVeW\u002fVlVVVVVV5b8gx3Ecx3HMvyDHcRzHccy\u002fIMdxHMdxzL8gx3Ecx3HMvyDHcRzHccy\u002fIMdxHMdxzL8gx3Ecx3HMvyDHcRzHccy\u002fIMdxHMdxzL8gx3Ecx3HMvyDHcRzHccw\u002fIMdxHMdxzD8gx3Ecx3HMPyDHcRzHccw\u002fIMdxHMdxzD8gx3Ecx3HMPyDHcRzHccw\u002fIMdxHMdxzD8gx3Ecx3HMPyDHcRzHccw\u002fVFVVVVVV5T9UVVVVVVXlP1RVVVVVVeU\u002fVFVVVVVV5T9UVVVVVVXlP1RVVVVVVeU\u002fVFVVVVVV5T9UVVVVVVXlP1RVVVVVVeU\u002fVFVVVVVV5T9wHMdxHMfxP3Acx3Ecx\u002fE\u002fcBzHcRzH8T9wHMdxHMfxP3Acx3Ecx\u002fE\u002fcBzHcRzH8T9wHMdxHMfxP3Acx3Ecx\u002fE\u002fcBzHcRzH8T9wHMdxHMfxPziO4ziO4\u002fg\u002fOI7jOI7j+D84juM4juP4PziO4ziO4\u002fg\u002fOI7jOI7j+D84juM4juP4PziO4ziO4\u002fg\u002fOI7jOI7j+D84juM4juP4PziO4ziO4\u002fg\u002fAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEA=","shape":"10, 10"},"type":"surface"},{"line":{"color":"red","width":6},"marker":{"size":5},"mode":"lines+markers","name":"Basis Vector v1","x":[0,1],"y":[0,2],"z":[0,0],"type":"scatter3d"},{"line":{"color":"green","width":6},"marker":{"size":5},"mode":"lines+markers","name":"Basis Vector v2","x":[0,-1],"y":[0,1],"z":[0,1],"type":"scatter3d"},{"marker":{"color":"black","size":8},"mode":"markers","name":"Origin (0,0,0)","x":[0],"y":[0],"z":[0],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"scene":{"xaxis":{"title":{"text":"X Axis"},"range":[-4,4]},"yaxis":{"title":{"text":"Y Axis"},"range":[-4,4]},"zaxis":{"title":{"text":"Z Axis"},"range":[-4,4]}},"margin":{"l":0,"r":0,"b":0,"t":40},"title":{"text":"2D Subspace Spanned by v1 and v2 in 3D Space"}},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.4.0.min.js" integrity="sha256-KEmPoupLpFyGMyGAiOsiNDbKDKAvxXAn/W+oQa0ZAfk=" crossorigin="anonymous"></script>                <div id="4a6aefea-b9f5-434e-9e69-08d3d7c8d511" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("4a6aefea-b9f5-434e-9e69-08d3d7c8d511")) {                    Plotly.newPlot(                        "4a6aefea-b9f5-434e-9e69-08d3d7c8d511",                        [{"colorscale":[[0.0,"rgb(247,251,255)"],[0.125,"rgb(222,235,247)"],[0.25,"rgb(198,219,239)"],[0.375,"rgb(158,202,225)"],[0.5,"rgb(107,174,214)"],[0.625,"rgb(66,146,198)"],[0.75,"rgb(33,113,181)"],[0.875,"rgb(8,81,156)"],[1.0,"rgb(8,48,107)"]],"name":"Subspace (Span)","opacity":0.4,"showscale":false,"x":{"dtype":"f8","bdata":"AAAAAAAAAAAcx3Ecx3HcPxzHcRzHcew\u002fVVVVVVVV9T8cx3Ecx3H8P3Icx3EcxwFAVVVVVVVVBUA4juM4juMIQBzHcRzHcQxAAAAAAAAAEEAcx3Ecx3HcvwAAAAAAAAAAHMdxHMdx3D8cx3Ecx3HsP1VVVVVVVfU\u002fHcdxHMdx\u002fD9yHMdxHMcBQFRVVVVVVQVAOI7jOI7jCEAcx3Ecx3EMQBzHcRzHcey\u002fHMdxHMdx3L8AAAAAAAAAABzHcRzHcdw\u002fHMdxHMdx7D9WVVVVVVX1PxzHcRzHcfw\u002fcRzHcRzHAUBVVVVVVVUFQDmO4ziO4whAVVVVVVVV9b8cx3Ecx3HsvxzHcRzHcdy\u002fAAAAAAAAAAAcx3Ecx3HcPx7HcRzHcew\u002fVVVVVVVV9T8bx3Ecx3H8P3Icx3EcxwFAVlVVVVVVBUAcx3Ecx3H8v1VVVVVVVfW\u002fHMdxHMdx7L8cx3Ecx3HcvwAAAAAAAAAAIMdxHMdx3D8cx3Ecx3HsP1RVVVVVVfU\u002fHMdxHMdx\u002fD9yHMdxHMcBQHIcx3EcxwHAHcdxHMdx\u002fL9WVVVVVVX1vx7HcRzHcey\u002fIMdxHMdx3L8AAAAAAAAAABjHcRzHcdw\u002fGMdxHMdx7D9UVVVVVVX1PxzHcRzHcfw\u002fVVVVVVVVBcByHMdxHMcBwBzHcRzHcfy\u002fVVVVVVVV9b8cx3Ecx3HsvxjHcRzHcdy\u002fAAAAAAAAAAAYx3Ecx3HcPxzHcRzHcew\u002fVlVVVVVV9T84juM4juMIwFRVVVVVVQXAcRzHcRzHAcAbx3Ecx3H8v1RVVVVVVfW\u002fGMdxHMdx7L8Yx3Ecx3HcvwAAAAAAAAAAIMdxHMdx3D8gx3Ecx3HsPxzHcRzHcQzAOI7jOI7jCMBVVVVVVVUFwHIcx3EcxwHAHMdxHMdx\u002fL9UVVVVVVX1vxzHcRzHcey\u002fIMdxHMdx3L8AAAAAAAAAACDHcRzHcdw\u002fAAAAAAAAEMAcx3Ecx3EMwDmO4ziO4wjAVlVVVVVVBcByHMdxHMcBwBzHcRzHcfy\u002fVlVVVVVV9b8gx3Ecx3HsvyDHcRzHcdy\u002fAAAAAAAAAAA=","shape":"10, 10"},"y":{"dtype":"f8","bdata":"AAAAAAAAGMAcx3Ecx3EUwDmO4ziO4xDAq6qqqqqqCsDkOI7jOI4DwDiO4ziO4\u002fi\u002fWFVVVVVV5b8Ax3Ecx3HMP3Acx3Ecx\u002fE\u002fAAAAAAAAAECO4ziO4zgWwKuqqqqqqhLAjuM4juM4DsDIcRzHcRwHwAAAAAAAAADAcRzHcRzH8b8ox3Ecx3HMv05VVVVVVeU\u002fN47jOI7j+D\u002fkOI7jOI4DQBzHcRzHcRTAOY7jOI7jEMCrqqqqqqoKwOQ4juM4jgPAOo7jOI7j+L9UVVVVVVXlvxDHcRzHccw\u002fbhzHcRzH8T\u002f+\u002f\u002f\u002f\u002f\u002f\u002f\u002f\u002fP8dxHMdxHAdAq6qqqqqqEsCO4ziO4zgOwMhxHMdxHAfAAAAAAAAAAMBzHMdxHMfxvxjHcRzHccy\u002fUlVVVVVV5T81juM4juP4P+I4juM4jgNAqqqqqqqqCkA5juM4juMQwKuqqqqqqgrA5DiO4ziOA8A6juM4juP4v1hVVVVVVeW\u002fIMdxHMdxzD9wHMdxHMfxP\u002fz\u002f\u002f\u002f\u002f\u002f\u002f\u002f8\u002fxnEcx3EcB0CO4ziO4zgOQI7jOI7jOA7Ax3Ecx3EcB8AAAAAAAAAAwHIcx3Ecx\u002fG\u002fIMdxHMdxzL9YVVVVVVXlPziO4ziO4\u002fg\u002f4jiO4ziOA0CqqqqqqqoKQDmO4ziO4xBAq6qqqqqqCsDkOI7jOI4DwDqO4ziO4\u002fi\u002fWFVVVVVV5b8Qx3Ecx3HMP3Icx3Ecx\u002fE\u002f\u002fv\u002f\u002f\u002f\u002f\u002f\u002f\u002fz\u002fFcRzHcRwHQI3jOI7jOA5AqqqqqqqqEkDIcRzHcRwHwAEAAAAAAADAdBzHcRzH8b8wx3Ecx3HMv1BVVVVVVeU\u002fOI7jOI7j+D\u002fiOI7jOI4DQKiqqqqqqgpAOI7jOI7jEEAcx3Ecx3EUQOQ4juM4jgPAOo7jOI7j+L9YVVVVVVXlvxDHcRzHccw\u002fcBzHcRzH8T8AAAAAAAAAQMZxHMdxHAdAjOM4juM4DkCqqqqqqqoSQI7jOI7jOBZAAAAAAAAAAMByHMdxHMfxvyDHcRzHccy\u002fVFVVVVVV5T84juM4juP4P+Q4juM4jgNAqqqqqqqqCkA4juM4juMQQBzHcRzHcRRAAAAAAAAAGEA=","shape":"10, 10"},"z":{"dtype":"f8","bdata":"AAAAAAAAAMAAAAAAAAAAwAAAAAAAAADAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAADAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAADAAAAAAAAAAMA5juM4juP4vzmO4ziO4\u002fi\u002fOY7jOI7j+L85juM4juP4vzmO4ziO4\u002fi\u002fOY7jOI7j+L85juM4juP4vzmO4ziO4\u002fi\u002fOY7jOI7j+L85juM4juP4v3Icx3Ecx\u002fG\u002fchzHcRzH8b9yHMdxHMfxv3Icx3Ecx\u002fG\u002fchzHcRzH8b9yHMdxHMfxv3Icx3Ecx\u002fG\u002fchzHcRzH8b9yHMdxHMfxv3Icx3Ecx\u002fG\u002fVlVVVVVV5b9WVVVVVVXlv1ZVVVVVVeW\u002fVlVVVVVV5b9WVVVVVVXlv1ZVVVVVVeW\u002fVlVVVVVV5b9WVVVVVVXlv1ZVVVVVVeW\u002fVlVVVVVV5b8gx3Ecx3HMvyDHcRzHccy\u002fIMdxHMdxzL8gx3Ecx3HMvyDHcRzHccy\u002fIMdxHMdxzL8gx3Ecx3HMvyDHcRzHccy\u002fIMdxHMdxzL8gx3Ecx3HMvyDHcRzHccw\u002fIMdxHMdxzD8gx3Ecx3HMPyDHcRzHccw\u002fIMdxHMdxzD8gx3Ecx3HMPyDHcRzHccw\u002fIMdxHMdxzD8gx3Ecx3HMPyDHcRzHccw\u002fVFVVVVVV5T9UVVVVVVXlP1RVVVVVVeU\u002fVFVVVVVV5T9UVVVVVVXlP1RVVVVVVeU\u002fVFVVVVVV5T9UVVVVVVXlP1RVVVVVVeU\u002fVFVVVVVV5T9wHMdxHMfxP3Acx3Ecx\u002fE\u002fcBzHcRzH8T9wHMdxHMfxP3Acx3Ecx\u002fE\u002fcBzHcRzH8T9wHMdxHMfxP3Acx3Ecx\u002fE\u002fcBzHcRzH8T9wHMdxHMfxPziO4ziO4\u002fg\u002fOI7jOI7j+D84juM4juP4PziO4ziO4\u002fg\u002fOI7jOI7j+D84juM4juP4PziO4ziO4\u002fg\u002fOI7jOI7j+D84juM4juP4PziO4ziO4\u002fg\u002fAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEA=","shape":"10, 10"},"type":"surface"},{"line":{"color":"red","width":6},"marker":{"size":5},"mode":"lines+markers","name":"Basis Vector v1","x":[0,1],"y":[0,2],"z":[0,0],"type":"scatter3d"},{"line":{"color":"green","width":6},"marker":{"size":5},"mode":"lines+markers","name":"Basis Vector v2","x":[0,-1],"y":[0,1],"z":[0,1],"type":"scatter3d"},{"marker":{"color":"black","size":8},"mode":"markers","name":"Origin (0,0,0)","x":[0],"y":[0],"z":[0],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"scene":{"xaxis":{"title":{"text":"X Axis"},"range":[-4,4]},"yaxis":{"title":{"text":"Y Axis"},"range":[-4,4]},"zaxis":{"title":{"text":"Z Axis"},"range":[-4,4]}},"margin":{"l":0,"r":0,"b":0,"t":40},"title":{"text":"2D Subspace Spanned by v1 and v2 in 3D Space"}},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('a1b95ff1-4b0a-45d8-ae41-6da9e4444d77');
+var gd = document.getElementById('4a6aefea-b9f5-434e-9e69-08d3d7c8d511');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -477,6 +661,19 @@ if (outputEl) {{
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
