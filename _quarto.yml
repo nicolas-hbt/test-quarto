@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: _site # Where the compiled HTML will go
+
+website:
+  title: "Test"
+  description: "Test"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Foundations"
+        contents:
+          - section: "Linear Algebra"
+            contents:
+              - 1.1-vectors-and-spaces.qmd
+              # You will uncomment and add the others as we generate them!
+              # - foundations/linear-algebra/01-atomic-fundamentals/1.2-matrix-types-and-properties.qmd
+
+format:
+  html:
+    theme: cosmo # Clean, modern Bootstrap theme
+    css: styles.css
+    toc: true
