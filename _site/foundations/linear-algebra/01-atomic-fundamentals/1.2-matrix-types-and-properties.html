@@ -23,41 +23,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -79,9 +44,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-cac18629bb11b13abc56c9564b31915e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-8547434e89f5f60b876ea395ecbcf21f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-cac18629bb11b13abc56c9564b31915e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-f8211470ddc1a9f9b92a1852c73a2859.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-ff4e5c3372d3c9afe071d5e3ba752b5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-f8211470ddc1a9f9b92a1852c73a2859.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -414,41 +379,29 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#concept" id="toc-concept" class="nav-link active" data-scroll-target="#concept">1. Concept</a></li>
+  <li><a href="#matrix-types-and-properties" id="toc-matrix-types-and-properties" class="nav-link active" data-scroll-target="#matrix-types-and-properties">Matrix Types and Properties</a>
+  <ul class="collapse">
+  <li><a href="#concept" id="toc-concept" class="nav-link" data-scroll-target="#concept">1. Concept</a></li>
   <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details">2. Details</a></li>
-  <li><a href="#code-implementation" id="toc-code-implementation" class="nav-link" data-scroll-target="#code-implementation">3. Code Implementation</a></li>
   <li><a href="#interview-questions" id="toc-interview-questions" class="nav-link" data-scroll-target="#interview-questions">4. Interview Questions</a>
   <ul class="collapse">
   <li><a href="#conceptual-questions" id="toc-conceptual-questions" class="nav-link" data-scroll-target="#conceptual-questions">Conceptual Questions</a></li>
   <li><a href="#mathematicalwhiteboard-questions" id="toc-mathematicalwhiteboard-questions" class="nav-link" data-scroll-target="#mathematicalwhiteboard-questions">Mathematical/Whiteboard Questions</a></li>
   <li><a href="#appliedcoding-questions" id="toc-appliedcoding-questions" class="nav-link" data-scroll-target="#appliedcoding-questions">Applied/Coding Questions</a></li>
   </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Foundations</li><li class="breadcrumb-item">Linear Algebra</li><li class="breadcrumb-item"><a href="../../../foundations/linear-algebra/01-atomic-fundamentals/1.1-vectors-and-spaces.html">Atomic Fundamentals</a></li><li class="breadcrumb-item"><a href="../../../foundations/linear-algebra/01-atomic-fundamentals/1.2-matrix-types-and-properties.html">Matrix Types and Properties</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Matrix Types and Properties</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Foundations</li><li class="breadcrumb-item">Linear Algebra</li><li class="breadcrumb-item"><a href="../../../foundations/linear-algebra/01-atomic-fundamentals/1.1-vectors-and-spaces.html">Atomic Fundamentals</a></li><li class="breadcrumb-item"><a href="../../../foundations/linear-algebra/01-atomic-fundamentals/1.2-matrix-types-and-properties.html">Matrix Types and Properties</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
+<section id="matrix-types-and-properties" class="level1">
+<h1>Matrix Types and Properties</h1>
 <section id="concept" class="level2">
 <h2 class="anchored" data-anchor-id="concept">1. Concept</h2>
 <p>If vectors are the “nouns” of linear algebra (representing points or data), matrices are the “verbs” (representing transformations or operations). When you multiply a vector by a matrix, you are scaling, rotating, shearing, or projecting that vector into a new space.</p>
@@ -463,70 +416,6 @@ window.Quarto = {
 <p><strong>3. Idempotent Matrices</strong> A matrix <span class="math inline">\(P\)</span> is idempotent if multiplying it by itself yields the original matrix: <span class="math display">\[P^2 = P\]</span> * <strong>Geometric Intuition:</strong> Idempotent matrices act as <strong>projections</strong>. If you project a 3D point onto a 2D plane, projecting it a second time doesn’t move it; it’s already on the plane. * <strong>Eigenvalues:</strong> The eigenvalues of an idempotent matrix are strictly either <span class="math inline">\(0\)</span> or <span class="math inline">\(1\)</span>.</p>
 <p><strong>4. The Trace</strong> The trace of a square matrix <span class="math inline">\(A\)</span>, denoted <span class="math inline">\(\text{Tr}(A)\)</span>, is the sum of its main diagonal elements: <span class="math display">\[\text{Tr}(A) = \sum_{i=1}^n a_{ii}\]</span> * <strong>Invariant Property:</strong> The trace is exactly equal to the sum of the matrix’s eigenvalues: <span class="math inline">\(\text{Tr}(A) = \sum \lambda_i\)</span>. * <strong>Cyclic Property:</strong> A highly tested property in matrix calculus is that the trace is invariant under cyclic permutations: <span class="math inline">\(\text{Tr}(ABC) = \text{Tr}(BCA) = \text{Tr}(CAB)\)</span>.</p>
 <p><strong>5. The Determinant</strong> The determinant, <span class="math inline">\(\det(A)\)</span>, is a scalar value that encodes the “volume scaling factor” of the linear transformation. * <strong>Geometric Intuition:</strong> If <span class="math inline">\(\det(A) = 2\)</span>, the transformation stretches the area/volume of the space by a factor of 2. If <span class="math inline">\(\det(A) = 0\)</span>, the transformation squishes the space into a lower dimension (e.g., a 3D space flattened into a 2D plane), meaning information is irrevocably lost and the matrix is <strong>singular</strong> (non-invertible). * <strong>Invariant Property:</strong> The determinant is exactly equal to the product of the eigenvalues: <span class="math inline">\(\det(A) = \prod \lambda_i\)</span>. * <strong>Multiplicative Property:</strong> <span class="math inline">\(\det(AB) = \det(A)\det(B)\)</span>.</p>
-</section>
-<section id="code-implementation" class="level2">
-<h2 class="anchored" data-anchor-id="code-implementation">3. Code Implementation</h2>
-<p>Here is how you can programmatically verify these matrix properties using <code>numpy</code>. Checking for numerical equivalence requires <code>np.allclose</code> due to floating-point precision limitations.</p>
-<div id="dca44372" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_matrix_properties(A: np.ndarray) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Analyzes a square matrix to determine its properties, trace, and determinant.</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> A.shape[<span class="dv">0</span>] <span class="op">!=</span> A.shape[<span class="dv">1</span>]:</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"Matrix must be square."</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> A.shape[<span class="dv">0</span>]</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    I <span class="op">=</span> np.eye(n)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Check Symmetry (A = A^T)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    is_symmetric <span class="op">=</span> np.allclose(A, A.T)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Check Orthogonality (A^T * A = I)</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    is_orthogonal <span class="op">=</span> np.allclose(A.T <span class="op">@</span> A, I)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Check Idempotence (A^2 = A)</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    is_idempotent <span class="op">=</span> np.allclose(A <span class="op">@</span> A, A)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4. Calculate Trace and Determinant</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    trace_val <span class="op">=</span> np.trace(A)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    det_val <span class="op">=</span> np.linalg.det(A)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">"is_symmetric"</span>: is_symmetric,</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"is_orthogonal"</span>: is_orthogonal,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"is_idempotent"</span>: is_idempotent,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"trace"</span>: trace_val,</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"determinant"</span>: det_val</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: An Orthogonal Matrix (2D Rotation by 90 degrees)</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.pi <span class="op">/</span> <span class="dv">2</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Q <span class="op">=</span> np.array([</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    [np.cos(theta), <span class="op">-</span>np.sin(theta)],</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    [np.sin(theta),  np.cos(theta)]</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>])</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Analyzing Rotation Matrix Q:"</span>)</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(analyze_matrix_properties(Q))</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: A Symmetric Covariance Matrix</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> np.array([</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">2.0</span>, <span class="fl">0.8</span>],</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.8</span>, <span class="fl">1.5</span>]</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>])</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Analyzing Covariance Matrix C:"</span>)</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(analyze_matrix_properties(C))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Analyzing Rotation Matrix Q:
-{'is_symmetric': False, 'is_orthogonal': True, 'is_idempotent': False, 'trace': np.float64(1.2246467991473532e-16), 'determinant': np.float64(1.0)}
-
-Analyzing Covariance Matrix C:
-{'is_symmetric': True, 'is_orthogonal': False, 'is_idempotent': False, 'trace': np.float64(3.5), 'determinant': np.float64(2.36)}</code></pre>
-</div>
-</div>
 </section>
 <section id="interview-questions" class="level2">
 <h2 class="anchored" data-anchor-id="interview-questions">4. Interview Questions</h2>
@@ -570,6 +459,7 @@ Analyzing Covariance Matrix C:
 </ul>
 
 
+</section>
 </section>
 </section>
 

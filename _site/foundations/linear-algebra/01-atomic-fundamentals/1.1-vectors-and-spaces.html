@@ -23,45 +23,10 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -79,9 +44,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-cac18629bb11b13abc56c9564b31915e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-8547434e89f5f60b876ea395ecbcf21f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-cac18629bb11b13abc56c9564b31915e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-f8211470ddc1a9f9b92a1852c73a2859.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-ff4e5c3372d3c9afe071d5e3ba752b5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-f8211470ddc1a9f9b92a1852c73a2859.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,15 +74,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script>
-window.PlotlyConfig = {MathJaxConfig: 'local'};
-if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
-</script>
-<script type="module">import "https://cdn.plot.ly/plotly-3.4.0.min"</script>
-
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -423,42 +379,29 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#concept" id="toc-concept" class="nav-link active" data-scroll-target="#concept">1. Concept</a></li>
+  <li><a href="#vectors-and-spaces" id="toc-vectors-and-spaces" class="nav-link active" data-scroll-target="#vectors-and-spaces">Vectors and Spaces</a>
+  <ul class="collapse">
+  <li><a href="#concept" id="toc-concept" class="nav-link" data-scroll-target="#concept">1. Concept</a></li>
   <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details">2. Details</a></li>
-  <li><a href="#code-implementation" id="toc-code-implementation" class="nav-link" data-scroll-target="#code-implementation">3. Code Implementation</a></li>
-  <li><a href="#interactive-visualization" id="toc-interactive-visualization" class="nav-link" data-scroll-target="#interactive-visualization">4. Interactive Visualization</a></li>
   <li><a href="#interview-questions" id="toc-interview-questions" class="nav-link" data-scroll-target="#interview-questions">5. Interview Questions</a>
   <ul class="collapse">
   <li><a href="#conceptual-questions" id="toc-conceptual-questions" class="nav-link" data-scroll-target="#conceptual-questions">Conceptual Questions</a></li>
   <li><a href="#mathematicalwhiteboard-questions" id="toc-mathematicalwhiteboard-questions" class="nav-link" data-scroll-target="#mathematicalwhiteboard-questions">Mathematical/Whiteboard Questions</a></li>
   <li><a href="#appliedcoding-questions" id="toc-appliedcoding-questions" class="nav-link" data-scroll-target="#appliedcoding-questions">Applied/Coding Questions</a></li>
   </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Foundations</li><li class="breadcrumb-item">Linear Algebra</li><li class="breadcrumb-item"><a href="../../../foundations/linear-algebra/01-atomic-fundamentals/1.1-vectors-and-spaces.html">Atomic Fundamentals</a></li><li class="breadcrumb-item"><a href="../../../foundations/linear-algebra/01-atomic-fundamentals/1.1-vectors-and-spaces.html">Vectors and Spaces</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Vectors and Spaces</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Foundations</li><li class="breadcrumb-item">Linear Algebra</li><li class="breadcrumb-item"><a href="../../../foundations/linear-algebra/01-atomic-fundamentals/1.1-vectors-and-spaces.html">Atomic Fundamentals</a></li><li class="breadcrumb-item"><a href="../../../foundations/linear-algebra/01-atomic-fundamentals/1.1-vectors-and-spaces.html">Vectors and Spaces</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
+<section id="vectors-and-spaces" class="level1">
+<h1>Vectors and Spaces</h1>
 <section id="concept" class="level2">
 <h2 class="anchored" data-anchor-id="concept">1. Concept</h2>
 <p>At the core of all machine learning—whether you are representing a word in a transformer’s embedding space or tracking user features in a recommendation system—is the concept of a <strong>vector</strong>. While physicists view vectors as arrows with magnitude and direction, and software engineers view them as arrays of data, machine learning engineers must view them geometrically as elements within a <strong>vector space</strong>.</p>
@@ -478,147 +421,147 @@ window.Quarto = {
 <p><strong>Basis and Dimension</strong> A set of vectors <span class="math inline">\(B = \{b_1, b_2, \dots, b_d\}\)</span> forms a <strong>basis</strong> for a vector space <span class="math inline">\(V\)</span> if: 1. <span class="math inline">\(B\)</span> is linearly independent. 2. <span class="math inline">\(\text{Span}(B) = V\)</span>.</p>
 <p>The number of vectors in the basis, <span class="math inline">\(d\)</span>, is the <strong>dimension</strong> of the space. Any vector <span class="math inline">\(x \in V\)</span> can be represented <em>uniquely</em> as a linear combination of the basis vectors.</p>
 <p><strong>Subspaces</strong> A subset <span class="math inline">\(W\)</span> of a vector space <span class="math inline">\(V\)</span> is a <strong>subspace</strong> if it satisfies three strict axioms: 1. <strong>Contains the zero vector:</strong> <span class="math inline">\(\mathbf{0} \in W\)</span>. 2. <strong>Closure under addition:</strong> If <span class="math inline">\(u, v \in W\)</span>, then <span class="math inline">\(u + v \in W\)</span>. 3. <strong>Closure under scalar multiplication:</strong> If <span class="math inline">\(u \in W\)</span> and <span class="math inline">\(c \in \mathbb{R}\)</span>, then <span class="math inline">\(cu \in W\)</span>.</p>
-</section>
-<section id="code-implementation" class="level2">
-<h2 class="anchored" data-anchor-id="code-implementation">3. Code Implementation</h2>
-<p>In practice, we check for linear independence, basis properties, and the dimension of a span by calculating the <strong>rank</strong> of a matrix. NumPy uses Singular Value Decomposition (SVD) under the hood to compute rank, making it numerically stable against floating-point errors.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_vector_set(vectors: <span class="bu">list</span>[np.ndarray], space_dim: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Analyzes a set of vectors to determine span, independence, and basis status.</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">        vectors: List of 1D numpy arrays representing vectors.</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">        space_dim: The dimension of the encompassing space (e.g., 3 for R^3).</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Create a matrix where each vector is a column</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    A <span class="op">=</span> np.column_stack(vectors)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    num_vectors <span class="op">=</span> A.shape[<span class="dv">1</span>]</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate rank using SVD (default tolerance handles floating point issues)</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    rank <span class="op">=</span> np.linalg.matrix_rank(A)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># A set is linearly independent if rank equals the number of vectors</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    is_independent <span class="op">=</span> (rank <span class="op">==</span> num_vectors)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The set spans the entire space if the rank equals the space dimension</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    spans_space <span class="op">=</span> (rank <span class="op">==</span> space_dim)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># A basis must both be independent and span the space</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    is_basis <span class="op">=</span> is_independent <span class="kw">and</span> spans_space</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="st">"matrix_rank"</span>: rank,</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="st">"is_linearly_independent"</span>: is_independent,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"spans_entire_space"</span>: spans_space,</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"is_basis"</span>: is_basis</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Example in R^3</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>])</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>v2 <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>])</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>v3 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>]) <span class="co"># Linearly dependent: v3 = v1 + v2</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>v4 <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>]) <span class="co"># Adds the missing z-dimension</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Analyzing {v1, v2, v3}:"</span>)</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(analyze_vector_set([v1, v2, v3], space_dim<span class="op">=</span><span class="dv">3</span>))</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected: Rank 2, Not Independent, Not a Basis</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Analyzing {v1, v2, v4}:"</span>)</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(analyze_vector_set([v1, v2, v4], space_dim<span class="op">=</span><span class="dv">3</span>))</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected: Rank 3, Independent, Is a Basis</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="interactive-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="interactive-visualization">4. Interactive Visualization</h2>
-<p>This interactive Plotly visualization demonstrates a 2D subspace (a plane) embedded within <span class="math inline">\(\mathbb{R}^3\)</span>, spanned by two linearly independent vectors.</p>
-<div id="bd1a5b49" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define two linearly independent basis vectors for our subspace</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>])</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>v2 <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>])</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a grid of parameters for the linear combinations (c1*v1 + c2*v2)</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>c1_vals, c2_vals <span class="op">=</span> np.meshgrid(np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">10</span>), np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">10</span>))</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> c1_vals <span class="op">*</span> v1[<span class="dv">0</span>] <span class="op">+</span> c2_vals <span class="op">*</span> v2[<span class="dv">0</span>]</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> c1_vals <span class="op">*</span> v1[<span class="dv">1</span>] <span class="op">+</span> c2_vals <span class="op">*</span> v2[<span class="dv">1</span>]</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> c1_vals <span class="op">*</span> v1[<span class="dv">2</span>] <span class="op">+</span> c2_vals <span class="op">*</span> v2[<span class="dv">2</span>]</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure()</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the 2D subspace (Plane)</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>fig.add_trace(go.Surface(</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>x, y<span class="op">=</span>y, z<span class="op">=</span>z, </span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    opacity<span class="op">=</span><span class="fl">0.4</span>, </span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    colorscale<span class="op">=</span><span class="st">'Blues'</span>, </span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    showscale<span class="op">=</span><span class="va">False</span>, </span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'Subspace (Span)'</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the basis vectors</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> v, name, color <span class="kw">in</span> <span class="bu">zip</span>([v1, v2], [<span class="st">'v1'</span>, <span class="st">'v2'</span>], [<span class="st">'red'</span>, <span class="st">'green'</span>]):</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    fig.add_trace(go.Scatter3d(</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span>[<span class="dv">0</span>, v[<span class="dv">0</span>]], y<span class="op">=</span>[<span class="dv">0</span>, v[<span class="dv">1</span>]], z<span class="op">=</span>[<span class="dv">0</span>, v[<span class="dv">2</span>]],</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>        mode<span class="op">=</span><span class="st">'lines+markers'</span>,</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span>color, width<span class="op">=</span><span class="dv">6</span>),</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">5</span>),</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        name<span class="op">=</span><span class="ss">f'Basis Vector </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">'</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    ))</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the Origin (crucial for a subspace)</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>fig.add_trace(go.Scatter3d(</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>[<span class="dv">0</span>], y<span class="op">=</span>[<span class="dv">0</span>], z<span class="op">=</span>[<span class="dv">0</span>],</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">'markers'</span>,</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'black'</span>, size<span class="op">=</span><span class="dv">8</span>),</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'Origin (0,0,0)'</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>))</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'2D Subspace Spanned by v1 and v2 in 3D Space'</span>,</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    scene<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        xaxis_title<span class="op">=</span><span class="st">'X Axis'</span>,</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        yaxis_title<span class="op">=</span><span class="st">'Y Axis'</span>,</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        zaxis_title<span class="op">=</span><span class="st">'Z Axis'</span>,</span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        xaxis<span class="op">=</span><span class="bu">dict</span>(<span class="bu">range</span><span class="op">=</span>[<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>]),</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        yaxis<span class="op">=</span><span class="bu">dict</span>(<span class="bu">range</span><span class="op">=</span>[<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>]),</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>        zaxis<span class="op">=</span><span class="bu">dict</span>(<span class="bu">range</span><span class="op">=</span>[<span class="op">-</span><span class="dv">4</span>, <span class="dv">4</span>])</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    margin<span class="op">=</span><span class="bu">dict</span>(l<span class="op">=</span><span class="dv">0</span>, r<span class="op">=</span><span class="dv">0</span>, b<span class="op">=</span><span class="dv">0</span>, t<span class="op">=</span><span class="dv">40</span>)</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="co"># For Quarto or Jupyter Notebook rendering</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>fig</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.4.0.min.js" integrity="sha256-KEmPoupLpFyGMyGAiOsiNDbKDKAvxXAn/W+oQa0ZAfk=" crossorigin="anonymous"></script>                <div id="482754f3-6125-4715-9963-c7960e449755" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("482754f3-6125-4715-9963-c7960e449755")) {                    Plotly.newPlot(                        "482754f3-6125-4715-9963-c7960e449755",                        [{"colorscale":[[0.0,"rgb(247,251,255)"],[0.125,"rgb(222,235,247)"],[0.25,"rgb(198,219,239)"],[0.375,"rgb(158,202,225)"],[0.5,"rgb(107,174,214)"],[0.625,"rgb(66,146,198)"],[0.75,"rgb(33,113,181)"],[0.875,"rgb(8,81,156)"],[1.0,"rgb(8,48,107)"]],"name":"Subspace (Span)","opacity":0.4,"showscale":false,"x":{"dtype":"f8","bdata":"AAAAAAAAAAAcx3Ecx3HcPxzHcRzHcew\u002fVVVVVVVV9T8cx3Ecx3H8P3Icx3EcxwFAVVVVVVVVBUA4juM4juMIQBzHcRzHcQxAAAAAAAAAEEAcx3Ecx3HcvwAAAAAAAAAAHMdxHMdx3D8cx3Ecx3HsP1VVVVVVVfU\u002fHcdxHMdx\u002fD9yHMdxHMcBQFRVVVVVVQVAOI7jOI7jCEAcx3Ecx3EMQBzHcRzHcey\u002fHMdxHMdx3L8AAAAAAAAAABzHcRzHcdw\u002fHMdxHMdx7D9WVVVVVVX1PxzHcRzHcfw\u002fcRzHcRzHAUBVVVVVVVUFQDmO4ziO4whAVVVVVVVV9b8cx3Ecx3HsvxzHcRzHcdy\u002fAAAAAAAAAAAcx3Ecx3HcPx7HcRzHcew\u002fVVVVVVVV9T8bx3Ecx3H8P3Icx3EcxwFAVlVVVVVVBUAcx3Ecx3H8v1VVVVVVVfW\u002fHMdxHMdx7L8cx3Ecx3HcvwAAAAAAAAAAIMdxHMdx3D8cx3Ecx3HsP1RVVVVVVfU\u002fHMdxHMdx\u002fD9yHMdxHMcBQHIcx3EcxwHAHcdxHMdx\u002fL9WVVVVVVX1vx7HcRzHcey\u002fIMdxHMdx3L8AAAAAAAAAABjHcRzHcdw\u002fGMdxHMdx7D9UVVVVVVX1PxzHcRzHcfw\u002fVVVVVVVVBcByHMdxHMcBwBzHcRzHcfy\u002fVVVVVVVV9b8cx3Ecx3HsvxjHcRzHcdy\u002fAAAAAAAAAAAYx3Ecx3HcPxzHcRzHcew\u002fVlVVVVVV9T84juM4juMIwFRVVVVVVQXAcRzHcRzHAcAbx3Ecx3H8v1RVVVVVVfW\u002fGMdxHMdx7L8Yx3Ecx3HcvwAAAAAAAAAAIMdxHMdx3D8gx3Ecx3HsPxzHcRzHcQzAOI7jOI7jCMBVVVVVVVUFwHIcx3EcxwHAHMdxHMdx\u002fL9UVVVVVVX1vxzHcRzHcey\u002fIMdxHMdx3L8AAAAAAAAAACDHcRzHcdw\u002fAAAAAAAAEMAcx3Ecx3EMwDmO4ziO4wjAVlVVVVVVBcByHMdxHMcBwBzHcRzHcfy\u002fVlVVVVVV9b8gx3Ecx3HsvyDHcRzHcdy\u002fAAAAAAAAAAA=","shape":"10, 10"},"y":{"dtype":"f8","bdata":"AAAAAAAAGMAcx3Ecx3EUwDmO4ziO4xDAq6qqqqqqCsDkOI7jOI4DwDiO4ziO4\u002fi\u002fWFVVVVVV5b8Ax3Ecx3HMP3Acx3Ecx\u002fE\u002fAAAAAAAAAECO4ziO4zgWwKuqqqqqqhLAjuM4juM4DsDIcRzHcRwHwAAAAAAAAADAcRzHcRzH8b8ox3Ecx3HMv05VVVVVVeU\u002fN47jOI7j+D\u002fkOI7jOI4DQBzHcRzHcRTAOY7jOI7jEMCrqqqqqqoKwOQ4juM4jgPAOo7jOI7j+L9UVVVVVVXlvxDHcRzHccw\u002fbhzHcRzH8T\u002f+\u002f\u002f\u002f\u002f\u002f\u002f\u002f\u002fP8dxHMdxHAdAq6qqqqqqEsCO4ziO4zgOwMhxHMdxHAfAAAAAAAAAAMBzHMdxHMfxvxjHcRzHccy\u002fUlVVVVVV5T81juM4juP4P+I4juM4jgNAqqqqqqqqCkA5juM4juMQwKuqqqqqqgrA5DiO4ziOA8A6juM4juP4v1hVVVVVVeW\u002fIMdxHMdxzD9wHMdxHMfxP\u002fz\u002f\u002f\u002f\u002f\u002f\u002f\u002f8\u002fxnEcx3EcB0CO4ziO4zgOQI7jOI7jOA7Ax3Ecx3EcB8AAAAAAAAAAwHIcx3Ecx\u002fG\u002fIMdxHMdxzL9YVVVVVVXlPziO4ziO4\u002fg\u002f4jiO4ziOA0CqqqqqqqoKQDmO4ziO4xBAq6qqqqqqCsDkOI7jOI4DwDqO4ziO4\u002fi\u002fWFVVVVVV5b8Qx3Ecx3HMP3Icx3Ecx\u002fE\u002f\u002fv\u002f\u002f\u002f\u002f\u002f\u002f\u002fz\u002fFcRzHcRwHQI3jOI7jOA5AqqqqqqqqEkDIcRzHcRwHwAEAAAAAAADAdBzHcRzH8b8wx3Ecx3HMv1BVVVVVVeU\u002fOI7jOI7j+D\u002fiOI7jOI4DQKiqqqqqqgpAOI7jOI7jEEAcx3Ecx3EUQOQ4juM4jgPAOo7jOI7j+L9YVVVVVVXlvxDHcRzHccw\u002fcBzHcRzH8T8AAAAAAAAAQMZxHMdxHAdAjOM4juM4DkCqqqqqqqoSQI7jOI7jOBZAAAAAAAAAAMByHMdxHMfxvyDHcRzHccy\u002fVFVVVVVV5T84juM4juP4P+Q4juM4jgNAqqqqqqqqCkA4juM4juMQQBzHcRzHcRRAAAAAAAAAGEA=","shape":"10, 10"},"z":{"dtype":"f8","bdata":"AAAAAAAAAMAAAAAAAAAAwAAAAAAAAADAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAADAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAADAAAAAAAAAAMA5juM4juP4vzmO4ziO4\u002fi\u002fOY7jOI7j+L85juM4juP4vzmO4ziO4\u002fi\u002fOY7jOI7j+L85juM4juP4vzmO4ziO4\u002fi\u002fOY7jOI7j+L85juM4juP4v3Icx3Ecx\u002fG\u002fchzHcRzH8b9yHMdxHMfxv3Icx3Ecx\u002fG\u002fchzHcRzH8b9yHMdxHMfxv3Icx3Ecx\u002fG\u002fchzHcRzH8b9yHMdxHMfxv3Icx3Ecx\u002fG\u002fVlVVVVVV5b9WVVVVVVXlv1ZVVVVVVeW\u002fVlVVVVVV5b9WVVVVVVXlv1ZVVVVVVeW\u002fVlVVVVVV5b9WVVVVVVXlv1ZVVVVVVeW\u002fVlVVVVVV5b8gx3Ecx3HMvyDHcRzHccy\u002fIMdxHMdxzL8gx3Ecx3HMvyDHcRzHccy\u002fIMdxHMdxzL8gx3Ecx3HMvyDHcRzHccy\u002fIMdxHMdxzL8gx3Ecx3HMvyDHcRzHccw\u002fIMdxHMdxzD8gx3Ecx3HMPyDHcRzHccw\u002fIMdxHMdxzD8gx3Ecx3HMPyDHcRzHccw\u002fIMdxHMdxzD8gx3Ecx3HMPyDHcRzHccw\u002fVFVVVVVV5T9UVVVVVVXlP1RVVVVVVeU\u002fVFVVVVVV5T9UVVVVVVXlP1RVVVVVVeU\u002fVFVVVVVV5T9UVVVVVVXlP1RVVVVVVeU\u002fVFVVVVVV5T9wHMdxHMfxP3Acx3Ecx\u002fE\u002fcBzHcRzH8T9wHMdxHMfxP3Acx3Ecx\u002fE\u002fcBzHcRzH8T9wHMdxHMfxP3Acx3Ecx\u002fE\u002fcBzHcRzH8T9wHMdxHMfxPziO4ziO4\u002fg\u002fOI7jOI7j+D84juM4juP4PziO4ziO4\u002fg\u002fOI7jOI7j+D84juM4juP4PziO4ziO4\u002fg\u002fOI7jOI7j+D84juM4juP4PziO4ziO4\u002fg\u002fAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEA=","shape":"10, 10"},"type":"surface"},{"line":{"color":"red","width":6},"marker":{"size":5},"mode":"lines+markers","name":"Basis Vector v1","x":[0,1],"y":[0,2],"z":[0,0],"type":"scatter3d"},{"line":{"color":"green","width":6},"marker":{"size":5},"mode":"lines+markers","name":"Basis Vector v2","x":[0,-1],"y":[0,1],"z":[0,1],"type":"scatter3d"},{"marker":{"color":"black","size":8},"mode":"markers","name":"Origin (0,0,0)","x":[0],"y":[0],"z":[0],"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"scene":{"xaxis":{"title":{"text":"X Axis"},"range":[-4,4]},"yaxis":{"title":{"text":"Y Axis"},"range":[-4,4]},"zaxis":{"title":{"text":"Z Axis"},"range":[-4,4]}},"margin":{"l":0,"r":0,"b":0,"t":40},"title":{"text":"2D Subspace Spanned by v1 and v2 in 3D Space"}},                        {"responsive": true}                    ).then(function(){
-                            
-var gd = document.getElementById('482754f3-6125-4715-9963-c7960e449755');
-var x = new MutationObserver(function (mutations, observer) {{
-        var display = window.getComputedStyle(gd).display;
-        if (!display || display === 'none') {{
-            console.log([gd, 'removed!']);
-            Plotly.purge(gd);
-            observer.disconnect();
-        }}
-}});
+<div id="algo-vis-container" style="font-family: sans-serif; border: 1px solid #e0e0e0; padding: 20px; border-radius: 8px; background-color: #fcfcfc;">
+    <h3 style="margin-top: 0;" class="anchored">Bubble Sort Visualization</h3>
+    
+    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; align-items: center;">
+        <input type="text" id="array-input" value="45, 12, 88, 32, 67, 21, 9" style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 200px;" placeholder="e.g., 5, 3, 8, 1">
+        
+        <button onclick="generateChart()" style="padding: 8px 16px; cursor: pointer; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 4px;">Set Array</button>
+        <button onclick="generateRandom()" style="padding: 8px 16px; cursor: pointer; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 4px;">Random Array</button>
+        
+        <div style="display: flex; align-items: center; gap: 5px; margin-left: auto;">
+            <label for="speed-slider" style="font-size: 14px;">Speed:</label>
+            <input type="range" id="speed-slider" min="10" max="1000" value="300" dir="rtl" style="cursor: pointer;">
+        </div>
+        
+        <button id="start-btn" onclick="startSort()" style="padding: 8px 16px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 4px; font-weight: bold;">Start Sort</button>
+    </div>
 
-// Listen for the removal of the full notebook cells
-var notebookContainer = gd.closest('#notebook-container');
-if (notebookContainer) {{
-    x.observe(notebookContainer, {childList: true});
-}}
-
-// Listen for the clearing of the current output cell
-var outputEl = gd.closest('.output');
-if (outputEl) {{
-    x.observe(outputEl, {childList: true});
-}}
-
-                        })                };            </script>        </div>
+    <div id="bars-container" style="display: flex; align-items: flex-end; justify-content: center; height: 300px; gap: 4px; border-bottom: 2px solid #333; padding-bottom: 5px;">
+        </div>
+    
+    <div style="margin-top: 15px; font-size: 14px; text-align: center;">
+        <span style="display: inline-block; width: 12px; height: 12px; background-color: #007bff; margin-right: 5px;"></span> Unsorted
+        <span style="display: inline-block; width: 12px; height: 12px; background-color: #dc3545; margin-left: 15px; margin-right: 5px;"></span> Comparing
+        <span style="display: inline-block; width: 12px; height: 12px; background-color: #28a745; margin-left: 15px; margin-right: 5px;"></span> Sorted
+    </div>
 </div>
-</div>
+
+<script>
+    let currentArray = [];
+    let isSorting = false;
+
+    // Helper to pause execution for animation
+    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    // Get the current delay from the slider
+    const getDelay = () => parseInt(document.getElementById('speed-slider').value);
+
+    function parseInput() {
+        const inputStr = document.getElementById('array-input').value;
+        const parsed = inputStr.split(',').map(item => parseInt(item.trim())).filter(item => !isNaN(item));
+        return parsed.length > 0 ? parsed : [10, 20, 30]; // fallback
+    }
+
+    function drawBars(arr) {
+        const container = document.getElementById('bars-container');
+        container.innerHTML = '';
+        
+        // Find max to scale bars appropriately to fit the 300px height container
+        const maxVal = Math.max(...arr, 1); 
+        
+        arr.forEach((val, index) => {
+            const bar = document.createElement('div');
+            bar.className = 'array-bar';
+            bar.id = `bar-${index}`;
+            // Scale height relative to container (max 280px to leave room for text)
+            const height = (val / maxVal) * 280;
+            
+            bar.style.height = `${height}px`;
+            bar.style.width = '40px';
+            bar.style.backgroundColor = '#007bff'; // Default unsorted color
+            bar.style.color = 'white';
+            bar.style.display = 'flex';
+            bar.style.alignItems = 'flex-end';
+            bar.style.justifyContent = 'center';
+            bar.style.paddingBottom = '5px';
+            bar.style.boxSizing = 'border-box';
+            bar.style.transition = 'background-color 0.2s ease, height 0.2s ease';
+            bar.style.fontSize = '12px';
+            bar.style.fontWeight = 'bold';
+            
+            bar.innerText = val;
+            container.appendChild(bar);
+        });
+    }
+
+    function generateChart() {
+        if (isSorting) return;
+        currentArray = parseInput();
+        drawBars(currentArray);
+    }
+
+    function generateRandom() {
+        if (isSorting) return;
+        const randomArr = Array.from({length: 12}, () => Math.floor(Math.random() * 90) + 10);
+        document.getElementById('array-input').value = randomArr.join(', ');
+        generateChart();
+    }
+
+    async function startSort() {
+        if (isSorting) return;
+        isSorting = true;
+        document.getElementById('start-btn').disabled = true;
+        document.getElementById('start-btn').style.backgroundColor = '#6c757d';
+
+        let arr = [...currentArray];
+        let n = arr.length;
+        const bars = document.getElementById('bars-container').children;
+
+        for (let i = 0; i < n - 1; i++) {
+            for (let j = 0; j < n - i - 1; j++) {
+                // Highlight elements being compared
+                bars[j].style.backgroundColor = '#dc3545';
+                bars[j + 1].style.backgroundColor = '#dc3545';
+
+                await sleep(getDelay());
+
+                if (arr[j] > arr[j + 1]) {
+                    // Swap values in the array
+                    let temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+
+                    // Swap visually by updating heights and text
+                    const maxVal = Math.max(...currentArray, 1);
+                    
+                    bars[j].style.height = `${(arr[j] / maxVal) * 280}px`;
+                    bars[j].innerText = arr[j];
+                    
+                    bars[j + 1].style.height = `${(arr[j + 1] / maxVal) * 280}px`;
+                    bars[j + 1].innerText = arr[j + 1];
+                }
+
+                // Revert color back to default
+                bars[j].style.backgroundColor = '#007bff';
+                bars[j + 1].style.backgroundColor = '#007bff';
+            }
+            // Mark the last element of this pass as sorted
+            bars[n - i - 1].style.backgroundColor = '#28a745';
+        }
+        // Mark the first element as sorted
+        if (bars.length > 0) bars[0].style.backgroundColor = '#28a745';
+
+        isSorting = false;
+        currentArray = arr; // Update current array to sorted state
+        document.getElementById('start-btn').disabled = false;
+        document.getElementById('start-btn').style.backgroundColor = '#007bff';
+    }
+
+    // Initialize on load
+    window.onload = generateChart;
+</script>
 </section>
 <section id="interview-questions" class="level2">
 <h2 class="anchored" data-anchor-id="interview-questions">5. Interview Questions</h2>
@@ -675,6 +618,7 @@ if (outputEl) {{
 </ul>
 
 
+</section>
 </section>
 </section>
 
