@@ -1,0 +1,27 @@
+## Key Insight
+
+::: insight-box
+The dot product $\mathbf{a} \cdot \mathbf{b} = \|\mathbf{a}\|\|\mathbf{b}\|\cos\theta$
+measures **how aligned** two vectors are.
+:::
+
+## Complexity
+
+| Operation | Time | Space |
+|-----------|------|-------|
+| Insert    | O(log n) | O(1) |
+| Search    | O(log n) | O(1) |
+
+::: callout-tip
+## Pro Tip
+Use `callout-tip` for hints, `callout-warning` for gotchas,
+`callout-important` for must-knows.
+:::
+
+<span class="badge-blue">Definition</span>
+<span class="badge-green">Theorem</span>
+<span class="badge-orange">Complexity</span>
+
+::: widget-card
+<!-- your interactive HTML/JS visualization goes here -->
+:::

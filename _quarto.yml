@@ -1,22 +1,35 @@
 project:
   type: website
-  output-dir: _site # Where the compiled HTML will go
+  output-dir: _site
 
 website:
   title: "Test"
-  description: "Test"
-  # Adds a sleek top navigation bar
+  description: "Interactive explorations of Machine Learning concepts"
+  favicon: assets/favicon.ico          # add a favicon
+  
+  # ── Open Graph (nice previews when shared on social) ──────────────────────
+  open-graph:
+    title: "Test"
+    description: "Interactive explorations of Machine Learning concepts"
+    image: assets/og-preview.png
+
+  # ── Top navbar ────────────────────────────────────────────────────────────
   navbar:
     background: primary
     search: true
+    logo: assets/logo.png              # optional small logo left of title
+    logo-alt: "Test logo"
+    pinned: true                       # stays visible when scrolling down
     right:
       - icon: github
         href: https://github.com/nicolas-hbt/observable-ml
-        text: GitHub
-  # Keeps your left sidebar for chapter navigation
+        aria-label: GitHub
+        
+  # ── Sidebar ───────────────────────────────────────────────────────────────
   sidebar:
     style: "docked"
     search: true
+    collapse-level: 2                  # sections collapsed by default beyond level 2
     contents:
       - section: "Foundations"
         contents:
@@ -25,16 +38,57 @@ website:
               - section: "Atomic Fundamentals"
                 contents:
                   - file: "foundations/linear-algebra/01-atomic-fundamentals/1.1-vectors-and-spaces.qmd"
+                    text: "1.1 Vectors & Spaces"       # cleaner display name
                   - file: "foundations/linear-algebra/01-atomic-fundamentals/1.2-matrix-types-and-properties.qmd"
+                    text: "1.2 Matrix Types & Properties"
+                  - file: "foundations/linear-algebra/01-atomic-fundamentals/test.qmd"
+                    text: "test"
 
+  # ── Footer ────────────────────────────────────────────────────────────────
+  page-footer:
+    left: "© 2026 Nicolas Hubert"
+    center: "Built with [Quarto](https://quarto.org)"
+    right:
+      - icon: github
+        href: https://github.com/nicolas-hbt/test
+
+  # ── Back to top button ────────────────────────────────────────────────────
+  back-to-top-navigation: true
+
+  # ── Breadcrumbs (shows path: Foundations > Linear Algebra > ...) ──────────
+  bread-crumbs: true
+
+# ── Format ──────────────────────────────────────────────────────────────────
 format:
   html:
-    # This enables the light/dark mode toggle switch!
     theme:
-      light: flatly
+      light: cosmo
       dark: darkly
     css: styles.css
     toc: true
     toc-depth: 3
     toc-title: "On this page"
-    code-copy: true # Adds a 'copy' button to all your code blocks
+    toc-expand: 2                      # auto-expand TOC to depth 2
+    code-copy: true
+    code-fold: false                   # set true to collapse code by default
+    code-tools: true                   # adds a toolbar above code blocks
+    code-link: true                    # hyperlinks functions to their docs
+    fig-align: center                  # center all figures
+    fig-cap-location: bottom
+    callout-appearance: simple         # cleaner callout boxes
+    smooth-scroll: true                # smooth anchor scrolling
+    link-external-icon: true           # shows ↗ icon on external links
+    link-external-newwindow: true      # external links open in new tab
+    
+    # ── Typography ────────────────────────────────────────────────────────
+    mainfont: "Inter"                  # pulled from Google Fonts via CSS
+    monofont: "JetBrains Mono"
+    fontsize: 1.05em
+    linestretch: 1.7
+
+# ── Execution defaults ───────────────────────────────────────────────────────
+execute:
+  echo: true
+  warning: false
+  message: false
+  cache: true                          # speeds up re-renders
